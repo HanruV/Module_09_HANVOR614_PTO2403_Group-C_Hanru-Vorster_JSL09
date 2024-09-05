@@ -7,6 +7,8 @@ body {
 }
 
 body {
+  padding: 1rem;
+  margin: 0;
   background: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -19,4 +21,13 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+div.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time {
+  text-align: center;
 }
