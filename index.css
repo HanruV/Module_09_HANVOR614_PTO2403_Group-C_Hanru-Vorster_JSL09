@@ -39,3 +39,20 @@ div.top {
 .time {
   text-align: center;
 }
+
+div#crypto {
+  font-size: 1rem;
+}
+
+div#crypto-top {
+  display: flex;
+  align-items: center;
+}
+
+div#crypto-top > span {
+  margin-left: 50px;
+}
+
+div#crypto-top > img {
+  margin-right: 10px;
+}
