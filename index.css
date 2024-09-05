@@ -42,11 +42,25 @@ div.top {
 
 div#crypto {
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  opacity: 0.6;
+  border-radius: 1rem;
+  color: black;
+  border: none;
+}
+
+div#crypto > p {
+  margin: 0;
+  align-self: center;
+  padding-bottom: 1rem;
 }
 
 div#crypto-top {
   display: flex;
   align-items: center;
+  margin: 1rem;
 }
 
 div#crypto-top > span {
