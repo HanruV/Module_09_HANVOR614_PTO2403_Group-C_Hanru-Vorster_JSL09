@@ -5,7 +5,7 @@ fetch(
 )
   .then((res) => res.json())
   .then((data) => {
-    console.log(data.urls.full);
+    // console.log(data.urls.full);
     document.body.style.backgroundImage = `url(${data.urls.full})`;
     //Adding author name
     document.getElementById(
@@ -26,7 +26,7 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     }
   })
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     document.getElementById("crypto-top").innerHTML = `
     <img src= ${data.image.thumb}
     <span>${data.name}</span>
@@ -38,3 +38,15 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     `;
   })
   .catch((err) => console.error(err));
+
+//Get date and print and update live in the DOM
+function getCurrentTime() {
+  const date = new Date();
+  document.getElementById("time").textContent = date.toLocaleTimeString(
+    "en-us",
+    {
+      timeStyle: "short",
+    }
+  );
+}
+setInterval(getCurrentTime, 1000);
