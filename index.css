@@ -45,8 +45,7 @@ div#crypto {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  background-color: whitesmoke;
-  opacity: 0.6;
+  background-color: rgba(245, 245, 245, 0.6);
   border-radius: 1rem;
   color: black;
   border: none;
@@ -70,4 +69,18 @@ div#crypto-top > span {
 
 div#crypto-top > img {
   margin-right: 10px;
+}
+
+/* Time Styles */
+
+.time {
+  width: 10rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(245, 245, 245, 0.6);
+  border-radius: 1rem;
+  color: black;
+  border: none;
+  align-self: center;
 }
