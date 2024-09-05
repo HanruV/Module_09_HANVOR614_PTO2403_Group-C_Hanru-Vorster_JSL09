@@ -18,6 +18,18 @@ fetch(
 
 //Fetching data from CoinGeckoAPI
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
-  .then((res) => res.json())
-  .then((data) => console.log(data))
+  .then((res) => {
+    if (!res.ok) {
+      throw Error("Something went wrong");
+    } else {
+      return res.json();
+    }
+  })
+  .then((data) => {
+    console.log(data);
+    document.getElementById("crypto-top").innerHTML = `
+    <img src= ${data.image.thumb}
+    <span>${data.name}</span>
+    `;
+  })
   .catch((err) => console.error(err));
