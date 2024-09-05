@@ -13,3 +13,10 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
