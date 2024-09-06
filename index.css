@@ -61,6 +61,7 @@ div#crypto-top {
   display: flex;
   align-items: center;
   margin: 1rem;
+  font-weight: 600;
 }
 
 div#crypto-top > span {
@@ -112,4 +113,5 @@ div#crypto-top > img {
 .temp {
   font-size: 1.5rem;
   margin: 0;
+  font-weight: 600;
 }
