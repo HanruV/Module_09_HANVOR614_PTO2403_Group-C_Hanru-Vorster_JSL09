@@ -50,3 +50,21 @@ function getCurrentTime() {
   );
 }
 setInterval(getCurrentTime, 1000);
+
+//Geolocation API/Waether API
+navigator.geolocation.getCurrentPosition((position) => {
+  fetch(
+    `https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`
+  )
+    .then((res) => {
+      if (!res) {
+        throw Error("Weather Data not Available");
+      } else {
+        return res.json();
+      }
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => console.error(err));
+});
