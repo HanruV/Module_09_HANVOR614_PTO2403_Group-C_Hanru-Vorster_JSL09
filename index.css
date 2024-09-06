@@ -83,3 +83,33 @@ div#crypto-top > img {
   border: none;
   align-self: center;
 }
+
+/* Weather Styles */
+
+#weather {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 1rem;
+  background-color: rgba(245, 245, 245, 0.6);
+  border-radius: 1rem;
+  color: black;
+  border: none;
+}
+
+#weather > img {
+  width: 70px;
+}
+
+.city-name {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.temp {
+  font-size: 1.5rem;
+  margin: 0;
+}
