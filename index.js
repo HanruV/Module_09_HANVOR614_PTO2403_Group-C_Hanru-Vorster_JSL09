@@ -1,20 +1,16 @@
 //Fetching a random image from unsplash and setting
 //as background for body
-fetch(
+const res = await fetch(
   "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature"
-)
-  .then((res) => res.json())
-  .then((data) => {
-    // console.log(data.urls.full);
-    document.body.style.backgroundImage = `url(${data.urls.full})`;
-    //Adding author name
-    document.getElementById(
-      "author"
-    ).textContent = `Img Author: ${data.user.name}`;
-  })
-  .catch((err) => {
-    document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1547234935-80c7145ec969?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjU1MzcxNTR8&ixlib=rb-4.0.3&q=85)`;
-  });
+);
+const data = await res.json();
+// console.log(data.urls.full);
+document.body.style.backgroundImage = `url(${data.urls.full})`;
+//Adding author name
+document.getElementById("author").textContent = `Img Author: ${data.user.name}`;
+// .catch((err) => {
+//   document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1547234935-80c7145ec969?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjU1MzcxNTR8&ixlib=rb-4.0.3&q=85)`;
+// });
 
 //Fetching data from CoinGeckoAPI
 fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
@@ -52,25 +48,20 @@ function getCurrentTime() {
 setInterval(getCurrentTime, 1000);
 
 //Geolocation API/Waether API
-navigator.geolocation.getCurrentPosition((position) => {
-  fetch(
+navigator.geolocation.getCurrentPosition(async (position) => {
+  const res = await fetch(
     `https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`
-  )
-    .then((res) => {
-      if (!res) {
-        throw Error("Weather Data not Available");
-      } else {
-        return res.json();
-      }
-    })
-    .then((data) => {
-      console.log(data);
-      const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-      document.getElementById("weather").innerHTML = `
-      <img src = ${iconUrl}>
-      <p class="temp">${Math.round(data.main.temp)}°C</p>
-      <p class="city-name">${data.name}</p>
-      `;
-    })
-    .catch((err) => console.error(err));
+  );
+  if (!res) {
+    throw Error("Weather Data not Available");
+  }
+  const data = await res.json();
+  const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  document.getElementById("weather").innerHTML = `
+  <img src = ${iconUrl}>
+  <p class="temp">${Math.round(data.main.temp)}°C</p>
+  <p class="city-name">${data.name}</p>
+  `;
+
+  // .catch((err) => console.error(err));
 });
