@@ -79,7 +79,7 @@ div#crypto-top > img {
   display: flex;
   flex-direction: column;
   background-color: rgba(245, 245, 245, 0.6);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   color: black;
   border: none;
   align-self: center;
@@ -95,7 +95,7 @@ div#crypto-top > img {
   align-self: flex-start;
   padding: 1rem;
   background-color: rgba(245, 245, 245, 0.6);
-  border-radius: 1rem;
+  border-radius: 10px 30px 20px 40px;
   color: black;
   border: none;
 }
